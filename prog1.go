@@ -70,12 +70,12 @@ func main() {
 		for _, r := range bres {
 			fmt.Println(r.n, r.a, r.b, r.d)
 		}
-
+		fmt.Print("\n")
 		nres := newton(x0n, eps)
 		for _, r := range nres {
 			fmt.Println(r.n, r.xn, r.xn1, r.d)
 		}
-
+		fmt.Print("\n")
 		sres := simpleIteration(x0s, eps)
 		for _, r := range sres {
 			fmt.Println(r.n, r.xn, r.xn1, r.d)
