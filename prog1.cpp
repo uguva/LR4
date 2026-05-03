@@ -69,12 +69,12 @@ int main() {
         for (auto r : b_res) {
             cout << r.n << " " << r.a << " " << r.b << " " << r.diff << "\n";
         }
-        
+        cout << "\n";
         vector<TableRow2> n_res = newton(x0_n, eps);
         for (auto r : n_res) {
             cout << r.n << " " << r.x_n << " " << r.x_n1 << " " << r.diff << "\n";
         }
-
+        cout << "\n";
         vector<TableRow2> s_res = simple_iteration(x0_s, eps);
         for (auto r : s_res) {
             cout << r.n << " " << r.x_n << " " << r.x_n1 << " " << r.diff << "\n";
