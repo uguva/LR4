@@ -8,11 +8,12 @@ using namespace std;
 
 struct Task2Res {
     int min_mod_idx;
-    long long sum_mod;
+    long sum_mod;
     vector<int> longest_inc;
     vector<int> reverse_desc;
     vector<int> shift_arr1;
     vector<int> shift_arr2;
+    vector<int> original_arr;
 };
 
 Task2Res solveTask2(int n1, int n2, int seed) {
@@ -22,10 +23,11 @@ Task2Res solveTask2(int n1, int n2, int seed) {
     uniform_int_distribution<> dist2(-50, 50);
 
     vector<int> arr1(n1);
+    
     for (auto& val : arr1) {
         val = dist1(gen);
     }
-
+    res.original_arr = arr1;
     int min_val = 1e9;
     res.min_mod_idx = -1;
     int idx = 0;
@@ -101,6 +103,8 @@ int main() {
     int n1, n2, seed;
     if (cin >> n1 >> n2 >> seed) {
         Task2Res r = solveTask2(n1, n2, seed);
+        for (auto v : r.original_arr) cout << v << " ";
+        cout << "\n";
         cout << r.min_mod_idx << " " << r.sum_mod << "\n";
         for (auto v : r.longest_inc) cout << v << " ";
         cout << "\n";
