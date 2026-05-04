@@ -14,6 +14,9 @@ struct Task2Res {
     vector<int> shift_arr1;
     vector<int> shift_arr2;
     vector<int> original_arr;
+    vector<int> original_arr1;
+    vector<int> original_arr2_1;
+    vector<int> original_arr2_2;
 };
 
 Task2Res solveTask2(int n1, int n2, int seed) {
@@ -28,6 +31,7 @@ Task2Res solveTask2(int n1, int n2, int seed) {
         val = dist1(gen);
     }
     res.original_arr = arr1;
+    res.original_arr1 = arr1;
     int min_val = 1e9;
     res.min_mod_idx = -1;
     int idx = 0;
@@ -38,7 +42,7 @@ Task2Res solveTask2(int n1, int n2, int seed) {
         }
         idx++;
     }
-
+    
     res.sum_mod = 0;
     bool count_flag = false;
     idx = 0;
@@ -78,7 +82,8 @@ Task2Res solveTask2(int n1, int n2, int seed) {
     for (auto& val : arr2_2) {
         val = dist2(gen);
     }
-
+    res.original_arr2_1 = arr2_1;
+    res.original_arr2_2 = arr2_2;
     res.shift_arr1 = arr2_1;
     res.shift_arr2 = arr2_2;
 
@@ -109,6 +114,10 @@ int main() {
         for (auto v : r.longest_inc) cout << v << " ";
         cout << "\n";
         for (auto v : r.reverse_desc) cout << v << " ";
+        cout << "\n";
+        for (auto v : r.original_arr2_1) cout << v << " ";
+        cout << "\n";
+        for (auto v : r.original_arr2_2) cout << v << " ";
         cout << "\n";
         for (auto v : r.shift_arr1) cout << v << " ";
         cout << "\n";
