@@ -8,7 +8,7 @@ using namespace std;
 
 struct Task2Res {
     int min_mod_idx;
-    long long sum_mod;
+    long sum_mod;
     vector<int> original_arr1;
     vector<int> longest_inc;
     vector<int> reverse_desc;
