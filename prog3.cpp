@@ -5,15 +5,15 @@
 using namespace std;
 
 struct LCGRes {
-    vector<long long> seq;
+    vector<long> seq;
     int repeat_idx;
 };
 
-LCGRes lcg(long long x0, long long a, long long b, long long c) {
+LCGRes lcg(long x0, long a, long b, long c) {
     LCGRes res;
-    set<long long> seen;
+    set<long> seen;
     res.repeat_idx = 0;
-    long long curr = x0;
+    long curr = x0;
     int n = 10; 
 
     for (int i = 0; i < n; ++i) {
@@ -33,7 +33,7 @@ LCGRes lcg(long long x0, long long a, long long b, long long c) {
 }
 
 int main() {
-    long long x0, a, b, c;
+    long x0, a, b, c;
     
     if (cin >> x0 >> a >> b >> c) {
         LCGRes r = lcg(x0, a, b, c);
